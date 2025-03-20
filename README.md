@@ -8,7 +8,7 @@ This project and its contributors are not affiliated with claude.ai. This is sim
 
 ## Credits
 
-This project is based on [gemini-desktop](https://github.com/kenvandine/gemini-desktop), originally developed by Ken VanDine and contributors.
+This project is fork on [gemini-desktop](https://github.com/kenvandine/gemini-desktop), originally developed by Ken VanDine and contributors.
 
 ## License
 

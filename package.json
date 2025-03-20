@@ -25,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/rhafaelcm/claude-desktop.git"
   },
-  "author": "Ken VanDine",
+  "author": "Rhafael da Costa Martins",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/rhafaelcm/claude-desktop/issues"
