@@ -19,14 +19,16 @@ jobs:
       id: build
       run: |
         snapcraft
-        echo "::set-output name=snap_name::$(ls *.snap)"
+        SNAP_NAME=$(ls *.snap)
+        echo "SNAP_NAME=${SNAP_NAME}" >> $GITHUB_ENV
     - name: Publish Snap
       uses: snapcore/action-publish@v1
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
-        snap: ${{ steps.build.outputs.snap_name }}
+        snap: ${{ env.SNAP_NAME }}
         release: edge
+
   build-arm64:
     runs-on: ubuntu-24.04-arm
     steps:
@@ -38,11 +40,12 @@ jobs:
       id: build
       run: |
         snapcraft
-        echo "::set-output name=snap_name::$(ls *.snap)"
+        SNAP_NAME=$(ls *.snap)
+        echo "SNAP_NAME=${SNAP_NAME}" >> $GITHUB_ENV
     - name: Publish Snap
       uses: snapcore/action-publish@v1
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
-        snap: ${{ steps.build.outputs.snap_name }}
+        snap: ${{ env.SNAP_NAME }}
         release: edge
