@@ -17,11 +17,13 @@ jobs:
         fetch-tags: true
     - uses: snapcore/action-build@v1
       id: build
+      with:
+        export: snap_name  # Export the snap name to be used in subsequent steps
     - uses: snapcore/action-publish@v1
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
-        snap: ${{ steps.build.outputs.snap }}
+        snap: ${{ steps.build.outputs.snap_name }}
         release: edge
   build-arm64:
     runs-on: ubuntu-24.04-arm
@@ -32,9 +34,11 @@ jobs:
         fetch-tags: true
     - uses: snapcore/action-build@v1
       id: build
+      with:
+        export: snap_name  # Export the snap name to be used in subsequent steps
     - uses: snapcore/action-publish@v1
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
-        snap: ${{ steps.build.outputs.snap }}
+        snap: ${{ steps.build.outputs.snap_name }}
         release: edge
