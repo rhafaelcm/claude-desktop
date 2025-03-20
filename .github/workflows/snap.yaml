@@ -15,11 +15,13 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
-    - uses: snapcore/action-build@v1
+    - name: Build Snap
       id: build
-      with:
-        export: snap_name  # Export the snap name to be used in subsequent steps
-    - uses: snapcore/action-publish@v1
+      run: |
+        snapcraft
+        echo "::set-output name=snap_name::$(ls *.snap)"
+    - name: Publish Snap
+      uses: snapcore/action-publish@v1
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
@@ -32,11 +34,13 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
-    - uses: snapcore/action-build@v1
+    - name: Build Snap
       id: build
-      with:
-        export: snap_name  # Export the snap name to be used in subsequent steps
-    - uses: snapcore/action-publish@v1
+      run: |
+        snapcraft
+        echo "::set-output name=snap_name::$(ls *.snap)"
+    - name: Publish Snap
+      uses: snapcore/action-publish@v1
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
