@@ -1,5 +1,5 @@
-name: gemini-desktop
-summary: Gemini
+name: claude-desktop
+summary: Claude AI
 description: |
   Unofficial Web app for Claude AI providing the desktop user
   experience you would expect on Ubuntu or any other Linux desktop
@@ -8,7 +8,7 @@ description: |
 
      sudo snap connect claude-desktop:audio-record
 
-adopt-info: gemini-desktop
+adopt-info: claude-desktop
 grade: stable
 confinement: strict
 base: core24
@@ -24,7 +24,7 @@ platforms:
 compression: lzo
 
 parts:
-  gemini-desktop:
+  claude-desktop:
     plugin: nil
     source: .
     build-packages:
@@ -74,7 +74,7 @@ plugs:
     private: true
 
 apps:
-  gemini-desktop:
+  claude-desktop:
     extensions: [gnome]
     desktop: unpacked/com.github.rhafaelcm.claude-desktop.desktop
     command: launcher
