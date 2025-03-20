@@ -15,6 +15,10 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
+    - name: Install Snapcraft
+      run: |
+        sudo apt update
+        sudo apt install -y snapcraft
     - name: Build Snap
       id: build
       run: |
@@ -36,6 +40,10 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
+    - name: Install Snapcraft
+      run: |
+        sudo apt update
+        sudo apt install -y snapcraft
     - name: Build Snap
       id: build
       run: |
