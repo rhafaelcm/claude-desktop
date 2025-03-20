@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Claude AI
+Comment=Claude AI
+Type=Application
+Exec=claude-desktop
+Icon=${SNAP}/unpacked/resources/app/icon.png
+Categories=Accessories;
+Keywords=AI;Copilot;GPT;ChatGPT;Claude;
